@@ -49,11 +49,6 @@ public class ViewRecord {
         {
             e.printStackTrace();
         }
-        finally {
-            if (con != null)
-            {
-                con.close();
-            }
-        }
+       
     }
 }

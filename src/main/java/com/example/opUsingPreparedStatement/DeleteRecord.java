@@ -34,11 +34,6 @@ public class DeleteRecord {
         {
             e.printStackTrace();
         }
-        finally {
-            if(con != null)
-            {
-                con.close();
-            }
-        }
+        
     }
 }

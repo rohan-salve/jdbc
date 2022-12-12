@@ -61,19 +61,7 @@ public class CreateNewRecord
         } catch (Exception e) {
             e.printStackTrace();
         }
-        finally {
-           
-
-            
-            if (con!= null){
-                con.close();
-            }
-            if (sc != null){
-                sc.close();
-            }
-
-
-        }
+        
     }
 
 }

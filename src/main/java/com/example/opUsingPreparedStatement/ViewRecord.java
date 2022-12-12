@@ -39,7 +39,7 @@ public class ViewRecord {
                         }
 
                         else System.out.println("Record not Available");
-                        sc.close();
+                        
                     }
                 
             }
@@ -52,11 +52,7 @@ public class ViewRecord {
         {
             e.printStackTrace();
         }
-        finally {
-            if (con != null)
-            {
-                con.close();
-            }
-        }
+       
+        
     }
 }
