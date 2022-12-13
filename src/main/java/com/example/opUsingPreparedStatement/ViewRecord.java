@@ -18,14 +18,15 @@ public class ViewRecord {
 
                
                     System.out.println("Enter Reg Number whose Details you want to See -");
-                    Scanner sc = new Scanner(System.in);
-                    int reg_num = sc.nextInt();
-                    String selectQuery = "select * from students where s_reg_number = ?";
-                    System.out.println(selectQuery);
-                    
-                    PreparedStatement prepStatement = con.prepareStatement(selectQuery);
-                    prepStatement.setInt(1, reg_num);
-                    resultSet = prepStatement.executeQuery();
+                    try (Scanner sc = new Scanner(System.in)) {
+						int reg_num = sc.nextInt();
+						String selectQuery = "select * from students where s_reg_number = ?";
+						System.out.println(selectQuery);
+						
+						PreparedStatement prepStatement = con.prepareStatement(selectQuery);
+						prepStatement.setInt(1, reg_num);
+						resultSet = prepStatement.executeQuery();
+					}
                     if ( resultSet != null)
                     {System.out.println("Name\tRoll Num\tReg Num\tCourse\tSemester");
                         if(resultSet.next())

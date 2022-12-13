@@ -19,14 +19,15 @@ public class ViewRecord {
 
                
                     System.out.println("Enter Reg Number whose Details you want to See -");
-                    Scanner sc = new Scanner(System.in);
-                    int emp_id = sc.nextInt();
-                    String selectQuery = "select * from employee where emp_id = ?";
-                    System.out.println(selectQuery);
-                    
-                    PreparedStatement prepStatement = con.prepareStatement(selectQuery);
-                    prepStatement.setInt(1, emp_id);
-                    resultSet = prepStatement.executeQuery();
+                    try (Scanner sc = new Scanner(System.in)) {
+						int emp_id = sc.nextInt();
+						String selectQuery = "select * from employee where emp_id = ?";
+						System.out.println(selectQuery);
+						
+						PreparedStatement prepStatement = con.prepareStatement(selectQuery);
+						prepStatement.setInt(1, emp_id);
+						resultSet = prepStatement.executeQuery();
+					}
                     if ( resultSet != null)
                     {System.out.println("EMP ID\tEMP Name\t DOB  \t DOJ \t DOM");
                         if(resultSet.next())
