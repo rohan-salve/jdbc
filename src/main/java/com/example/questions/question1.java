@@ -1,9 +1,6 @@
 package com.example.questions;
 
-import com.example.opUsingPreparedStatement.CreateNewRecord;
-import com.example.opUsingPreparedStatement.DeleteRecord;
-import com.example.opUsingPreparedStatement.UpdateRecord;
-import com.example.opUsingPreparedStatement.ViewRecord;
+
 import com.example.operations.*;
 
 import java.sql.Connection;
